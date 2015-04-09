@@ -1,3 +1,22 @@
+# Fork info
+
+## Modifications of parcoords and d3 libs:
+
+- [Custom 'log1' type for log scale](https://github.com/bioproximity/parallel-coordinates/commit/6fd2a4c95be37b8677229dbca3153f8125b1550d)
+- [Ignore `Infinity`, `-Infinity` and `null` values in parcoords during rendering](https://github.com/bioproximity/parallel-coordinates/commit/2a4fc3dee8c9d4560c42ff9f023ba282289a02d3)
+- [Ignore `Infinity`, `-Infinity` and `null` values during autoscaling](https://github.com/bioproximity/parallel-coordinates/blob/d026806bdba0c3559f17c9b6ae799665fd2ed5a0/d3.js#L88-L92)
+
+## Resources
+
+### Ignore null values:
+https://github.com/syntagmatic/parallel-coordinates/issues/41
+https://github.com/syntagmatic/parallel-coordinates/pull/73
+http://bl.ocks.org/syntagmatic/4248862
+
+### d3 Scales
+https://www.dashingd3js.com/d3js-scales
+
+
 # Parallel Coordinates
 
 An implementation of parallel coordinates in d3 as a [reusable chart](http://bost.ocks.org/mike/chart/)
