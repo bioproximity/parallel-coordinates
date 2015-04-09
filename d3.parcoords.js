@@ -200,18 +200,17 @@ pc.autoscale = function() {
         .domain(d3.extent(__.data, function(d) { return +d[k]; }))
         .range([h()+1, 1]);
     },
-
-      "string": function(k) {
-          return d3.scale.ordinal()
-              .domain(__.data.filter(function(d){
-                  // filter out the null values, so that they do not occur in the plot
-                  // k --> dim index
-                  // d --> whole data record
-                  return d[k] != null;
-              }).map(function(p) {
-                  return p[k]; }))
-              .rangePoints([h()+1, 1]);
-      }
+    "string": function(k) {
+        return d3.scale.ordinal()
+            .domain(__.data.filter(function(d){
+                // filter out the null values, so that they do not occur in the plot
+                // k --> dim index
+                // d --> whole data record
+                return ((d[k] != null) && (d[k] != "inf") && (d[k] != "-inf") && (d[k] != Infinity) && (d[k] != -Infinity));
+            }).map(function(p) {
+                return p[k]; }))
+            .rangePoints([h()+1, 1]);
+    }
   };
 
   __.dimensions.forEach(function(k) {
